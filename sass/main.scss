@@ -3,10 +3,10 @@ $bg-color: #222222;
 $logo-color: #54dbf8;
 
 // sizes
-$circle-size: 10vh;
-$oval-width: 60vh;
-$oval-height: 25vh;
-$oval-border-size: 2.5vh;
+$circle-size: 10vmin;
+$oval-width: 60vmin;
+$oval-height: 25vmin;
+$oval-border-size: 2.5vmin;
 
 // mixins
 @mixin center {
@@ -35,7 +35,7 @@ $oval-border-size: 2.5vh;
 body {
     @include center;
     background: $bg-color;
-    padding-top: 45vh;
+    padding-top: 45vmin;
     overflow: hidden;
 }
 
