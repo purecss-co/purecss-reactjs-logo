@@ -1,0 +1,80 @@
+// colors
+$bg-color: #222222;
+$logo-color: #54dbf8;
+
+// sizes
+$circle-size: 10vh;
+$oval-width: 60vh;
+$oval-height: 25vh;
+$oval-border-size: 2.5vh;
+
+// mixins
+@mixin center {
+    display: flex;
+    justify-content: center;
+}
+
+@mixin pseudo($position: absolute, $content: "") {
+    content: $content;
+    position: $position;
+}
+
+@mixin reset() {
+    * {
+        &,
+        &::before,
+        &::after {
+            box-sizing: border-box;
+            display: block;
+        }
+    }
+    position: relative;
+    z-index: 1;
+}
+
+body {
+    @include center;
+    background: $bg-color;
+    padding-top: 45vh;
+    overflow: hidden;
+}
+
+.logo {
+    @include reset;
+    .circle {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        &:after {
+            @include pseudo;
+            top: 50%;
+            left: 50%;
+            border-radius: 50%;
+            background: $logo-color;
+            width: $circle-size;
+            height: $circle-size;
+            transform: translateX(-50%) translateY(-50%);
+        }
+    }
+    .oval {
+        position: absolute;
+        width: $oval-width;
+        height: $oval-height;
+        border-radius: 50%;
+        border: $oval-border-size solid $logo-color;
+        transform-origin: center;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%) rotate(55deg);
+        &:nth-child(1) {
+            transform: translateX(-50%) translateY(-50%) rotate(125deg);
+        }
+        &:nth-child(2) {
+            transform: translateX(-50%) translateY(-50%) rotate(180deg);
+        }
+        &:nth-child(3) {
+            transform: translateX(-50%) translateY(-50%) rotate(125deg);
+        }
+    }
+}
