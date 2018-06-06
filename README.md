@@ -1,4 +1,4 @@
-# PureCSS - Responsive ReactJS Logo
+# PureCSS - ReactJS Logo
 Responsive ReactJS logo using HTML and CSS
 
 [Visit ReactJS website](https://reactjs.org)
